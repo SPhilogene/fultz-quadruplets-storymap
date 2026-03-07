@@ -143,11 +143,11 @@ $(window).on('load', function() {
     // custom icon for markers
    const customIcon = L.Icon.extend({
 		options: {
-			shadowUrl: 'leaf-shadow.png',
+			// shadowUrl: 'leaf-shadow.png',
 			iconSize:     [38, 95],
-			shadowSize:   [50, 64],
+			// shadowSize:   [50, 64],
 			iconAnchor:   [22, 94],
-			shadowAnchor: [4, 62],
+			// shadowAnchor: [4, 62],
 			popupAnchor:  [-3, -76]
 		}
 	});
@@ -187,7 +187,7 @@ const sankofa = new customIcon({iconUrl: 'media/sankofa-small.png'});
         
         markers.push(
           L.marker([lat, lon], {
-            // icon: L.ExtraMarkers.icon({
+            icon: L.ExtraMarkers.icon({
             //   icon: 'fa-number',
             //   number: c['Marker'] === 'Numbered'
             //     ? chapterCount
@@ -195,7 +195,7 @@ const sankofa = new customIcon({iconUrl: 'media/sankofa-small.png'});
             //       ? ''
             //       : c['Marker']), 
             //   markerColor: c['Marker Color'] || 'blue'
-            icon: 'sankofa'},
+            icon: 'sankofa'}),
             opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
             interactive: c['Marker'] === 'Hidden' ? false : true,
           }
