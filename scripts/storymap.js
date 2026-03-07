@@ -180,9 +180,9 @@ $(window).on('load', function() {
             //       ? ''
             //       : c['Marker']), 
             //   markerColor: c['Marker Color'] || 'blue'
-            }),
+            // }),
           icon: L.ExtraMarkers.icon({
-            //   iconUrl: 'media/sankofa-small.png'
+             iconUrl: 'media/sankofa-small.png'
           }),
             opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
             interactive: c['Marker'] === 'Hidden' ? false : true,
