@@ -141,33 +141,13 @@ $(window).on('load', function() {
     var markers = [];
 
     // custom icon for markers
-   const customIcon = L.Icon.extend({
-		options: {
-			// shadowUrl: 'leaf-shadow.png',
-			iconSize:     [38, 95],
-			// shadowSize:   [50, 64],
-			iconAnchor:   [22, 94],
-			// shadowAnchor: [4, 62],
-			popupAnchor:  [-3, -76]
-		}
-	});
-
-const sankofa = new customIcon({iconUrl: 'media/sankofa-small.png'});
-    
-     // LAST EDIT
-    // var markActiveColor = function(k) {
-    //   /* Removes marker-active class from all markers */
-    //   for (var i = 0; i < markers.length; i++) {
-    //     if (markers[i] && markers[i]._icon) {
-    //       markers[i]._icon.className = markers[i]._icon.className.replace(' marker-active', '');
-
-    //       if (i == k) {
-    //         /* Adds marker-active class, which is orange, to marker k */
-    //         markers[k]._icon.className += ' marker-active';
-    //       }
-    //     }
-    //   }
-    // }
+var customIcon = L.icon({
+    iconUrl: 'media/sankofa-small.png',
+    iconSize:     [38, 95], // size of the icon
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+    }
 
     var pixelsAbove = [];
     var chapterCount = 0;
@@ -184,9 +164,10 @@ const sankofa = new customIcon({iconUrl: 'media/sankofa-small.png'});
         var lon = parseFloat(c['Longitude']);
 
         chapterCount += 1;
-        
+
+		  // custom marker
         markers.push(
-          L.marker([lat, lon], {icon: 'sankofa'})
+          L.marker([lat, lon], {icon: customIcon})
         );
 
       // Add chapter container
