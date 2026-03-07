@@ -183,7 +183,7 @@ $(window).on('load', function() {
             }),
           icon: L.ExtraMarkers.icon({
             //   iconUrl: 'media/sankofa-small.png'
-          })
+          }),
             opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
             interactive: c['Marker'] === 'Hidden' ? false : true,
           }
