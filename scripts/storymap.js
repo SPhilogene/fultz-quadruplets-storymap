@@ -172,15 +172,18 @@ $(window).on('load', function() {
 
         markers.push(
           L.marker([lat, lon], {
-            icon: L.ExtraMarkers.icon({
-              icon: 'fa-number',
-              number: c['Marker'] === 'Numbered'
-                ? chapterCount
-                : (c['Marker'] === 'Plain'
-                  ? ''
-                  : c['Marker']), 
-              markerColor: c['Marker Color'] || 'blue'
+            // icon: L.ExtraMarkers.icon({
+            //   icon: 'fa-number',
+            //   number: c['Marker'] === 'Numbered'
+            //     ? chapterCount
+            //     : (c['Marker'] === 'Plain'
+            //       ? ''
+            //       : c['Marker']), 
+            //   markerColor: c['Marker Color'] || 'blue'
             }),
+          icon: L.ExtraMarkers.icon({
+            //   iconUrl: 'leaf-green.png'
+          })
             opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
             interactive: c['Marker'] === 'Hidden' ? false : true,
           }
