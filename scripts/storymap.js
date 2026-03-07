@@ -408,6 +408,7 @@ var sankofa = L.Icon.extend({
           // Fly to the new marker destination if latitude and longitude exist
           if (c['Latitude'] && c['Longitude']) {
             var zoom = c['Zoom'] ? c['Zoom'] : CHAPTER_ZOOM;
+            console.log(CHAPTER_ZOOM)
             map.flyTo([c['Latitude'], c['Longitude']], zoom, {
               animate: true,
               duration: 2, // default is 2 seconds
