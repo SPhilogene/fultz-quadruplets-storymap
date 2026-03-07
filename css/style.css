@@ -175,7 +175,7 @@ h2 {
   font-weight: normal;
 }
 
-.quote {
+/* .quote {
   margin: 0;
   background: #eee;
   padding: 1em;
@@ -184,4 +184,11 @@ h2 {
 .quote figcaption,
 .quote blockquote {
   margin: 1em;
-}
+} */
+
+#fancy-quote {
+padding-block-end: var(--spacing-r);
+padding-inline-end: var(--spacing-r);
+border-block-end: var(--border-width-l) solid var(--color-border);
+border-inline-end: var(--border-width-l) solid var(--color-border); }
+
