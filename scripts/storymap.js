@@ -169,6 +169,7 @@ var customIcon = L.icon({
         markers.push(
           L.marker([lat, lon], {icon: customIcon})
         );
+	  }
 
       // Add chapter container
       var container = $('<div></div>', {
