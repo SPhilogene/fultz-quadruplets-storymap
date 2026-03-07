@@ -141,30 +141,33 @@ $(window).on('load', function() {
     var markers = [];
 
     // custom icon for markers
-    var sankofa = L.Icon.extend({
-      options: {
-        shadowUrl: 'media/sankofa-small.png',
-        iconSize:     [38, 95],
-        shadowSize:   [50, 64],
-        iconAnchor:   [22, 94],
-        shadowAnchor: [4, 62],
-        popupAnchor:  [-3, -76]
-    }
-});
-    
-    var markActiveColor = function(k) {
-      /* Removes marker-active class from all markers */
-      for (var i = 0; i < markers.length; i++) {
-        if (markers[i] && markers[i]._icon) {
-          markers[i]._icon.className = markers[i]._icon.className.replace(' marker-active', '');
+   const customIcon = L.Icon.extend({
+		options: {
+			shadowUrl: 'leaf-shadow.png',
+			iconSize:     [38, 95],
+			shadowSize:   [50, 64],
+			iconAnchor:   [22, 94],
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-3, -76]
+		}
+	});
 
-          if (i == k) {
-            /* Adds marker-active class, which is orange, to marker k */
-            markers[k]._icon.className += ' marker-active';
-          }
-        }
-      }
-    }
+const sankofa = new customIcon({iconUrl: 'media/sankofa-small.png'});
+    
+     // LAST EDIT
+    // var markActiveColor = function(k) {
+    //   /* Removes marker-active class from all markers */
+    //   for (var i = 0; i < markers.length; i++) {
+    //     if (markers[i] && markers[i]._icon) {
+    //       markers[i]._icon.className = markers[i]._icon.className.replace(' marker-active', '');
+
+    //       if (i == k) {
+    //         /* Adds marker-active class, which is orange, to marker k */
+    //         markers[k]._icon.className += ' marker-active';
+    //       }
+    //     }
+    //   }
+    // }
 
     var pixelsAbove = [];
     var chapterCount = 0;
@@ -192,9 +195,7 @@ $(window).on('load', function() {
             //       ? ''
             //       : c['Marker']), 
             //   markerColor: c['Marker Color'] || 'blue'
-            icon: L.ExtraMarkers.icon({
-             icon: 'sankofa'
-            }),
+            icon: 'sankofa'}),
             opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
             interactive: c['Marker'] === 'Hidden' ? false : true,
           }
@@ -336,8 +337,9 @@ $(window).on('load', function() {
           $('.chapter-container').removeClass("in-focus").addClass("out-focus");
           $('div#container' + i).addClass("in-focus").removeClass("out-focus");
 
-          currentlyInFocus = i;
-          markActiveColor(currentlyInFocus);
+          // LAST EDIT
+          // currentlyInFocus = i;
+          // markActiveColor(currentlyInFocus);
 
           // Remove overlay tile layer if needed
           if (overlay && map.hasLayer(overlay)) {
