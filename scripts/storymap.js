@@ -186,24 +186,8 @@ const sankofa = new customIcon({iconUrl: 'media/sankofa-small.png'});
         chapterCount += 1;
         
         markers.push(
-          L.marker([lat, lon], {
-            icon: L.ExtraMarkers.icon({
-            //   icon: 'fa-number',
-            //   number: c['Marker'] === 'Numbered'
-            //     ? chapterCount
-            //     : (c['Marker'] === 'Plain'
-            //       ? ''
-            //       : c['Marker']), 
-            //   markerColor: c['Marker Color'] || 'blue'
-            icon: 'sankofa'}),
-            opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
-            interactive: c['Marker'] === 'Hidden' ? false : true,
-          }
-        ));
-
-      } else {
-        markers.push(null);
-      }
+          L.marker([lat, lon], {icon: 'sankofa'})
+        );
 
       // Add chapter container
       var container = $('<div></div>', {
