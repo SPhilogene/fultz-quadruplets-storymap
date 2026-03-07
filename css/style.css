@@ -174,3 +174,14 @@ h2 {
   font-size: 1.1em;
   font-weight: normal;
 }
+
+.quote {
+  margin: 0;
+  background: #eee;
+  padding: 1em;
+  border-radius: 1em;
+}
+.quote figcaption,
+.quote blockquote {
+  margin: 1em;
+}
