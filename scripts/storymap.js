@@ -195,7 +195,7 @@ const sankofa = new customIcon({iconUrl: 'media/sankofa-small.png'});
             //       ? ''
             //       : c['Marker']), 
             //   markerColor: c['Marker Color'] || 'blue'
-            icon: 'sankofa'}),
+            icon: 'sankofa'},
             opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
             interactive: c['Marker'] === 'Hidden' ? false : true,
           }
