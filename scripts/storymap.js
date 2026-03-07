@@ -169,7 +169,17 @@ $(window).on('load', function() {
         var lon = parseFloat(c['Longitude']);
 
         chapterCount += 1;
-
+        
+var sankofa = L.Icon.extend({
+    options: {
+        shadowUrl: 'media/sankofa-small.png',
+        iconSize:     [38, 95],
+        shadowSize:   [50, 64],
+        iconAnchor:   [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor:  [-3, -76]
+    }
+});
         markers.push(
           L.marker([lat, lon], {
             // icon: L.ExtraMarkers.icon({
@@ -181,7 +191,7 @@ $(window).on('load', function() {
             //       : c['Marker']), 
             //   markerColor: c['Marker Color'] || 'blue'
             icon: L.ExtraMarkers.icon({
-             iconUrl: 'media/sankofa-small.png'
+             icon: 'sankofa'
             }),
             opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
             interactive: c['Marker'] === 'Hidden' ? false : true,
