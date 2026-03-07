@@ -182,7 +182,7 @@ $(window).on('load', function() {
             //   markerColor: c['Marker Color'] || 'blue'
             }),
           icon: L.ExtraMarkers.icon({
-            //   iconUrl: 'leaf-green.png'
+            //   iconUrl: 'media/sankofa-small.png'
           })
             opacity: c['Marker'] === 'Hidden' ? 0 : 0.9,
             interactive: c['Marker'] === 'Hidden' ? false : true,
