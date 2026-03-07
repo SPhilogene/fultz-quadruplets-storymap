@@ -175,20 +175,22 @@ h2 {
   font-weight: normal;
 }
 
-/* .quote {
+.quote {
   margin: 0;
-  background: #eee;
-  padding: 1em;
+  /* background: #eee; */
+  padding: 0.5em;
   border-radius: 1em;
 }
 .quote figcaption,
 .quote blockquote {
-  margin: 1em;
-} */
+  margin: 0.5em;
+}
 
 #fancy-quote {
-padding-block-end: var(--spacing-r);
-padding-inline-end: var(--spacing-r);
-border-block-end: var(--border-width-l) solid var(--color-border);
-border-inline-end: var(--border-width-l) solid var(--color-border); }
+/* border-block-end: thick solid #9d8e6e;
+  border-inline-end: thick solid #9d8e6e; */
+  border-inline-start: thick solid #9d8e6e
+  padding-left: 15px;
+  padding-bottom: 15px;
+  margin: auto;}
 
